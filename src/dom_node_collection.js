@@ -1,8 +1,16 @@
 // Methods to create.
 // empty, remove, attr, addClass, removeClass, html, find, children, and parent
 class DOMNodeCollection {
-  constructor(nodeArr) {
+  constructor(nodeArr, fn) {
     this.nodeArr = nodeArr;
+
+    if (fn) {
+      if (document.readyState === "complete"){
+        fn();
+      } else {
+        this.on("DOMContentLoaded", fn);
+      }
+    }
   }
 
   empty() {
@@ -119,6 +127,22 @@ class DOMNodeCollection {
         });
       });
     }
+    return this;
+  }
+
+  on(eventName, eventHandler){ //eventHandler will be a callback, eventName e.g 'click'
+    this.nodeArr.forEach(node =>{
+      node.addEventListener(eventName, eventHandler);
+      node[`${eventName}Handler`] = eventHandler;
+    });
+    return this;
+  }
+
+  off(eventName){
+    this.nodeArr.forEach(node =>{
+      node.removeEventListener(eventName, node[`${eventName}Handler`]);
+      delete node[`${eventName}Handler`];
+    });
     return this;
   }
 }

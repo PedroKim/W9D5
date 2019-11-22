@@ -9,6 +9,24 @@
       <p><span></span></p>
     </div>
     <div><p></p></div>
+    <script>
+        console.log("hello");
+    </script>
+    <script>
+      $l(()=> {
+        console.log("loaded");
+      });
+    </script>
+    <script>
+      $l(() => {
+        console.log("loaded2");
+      });
+    </script>
+    <script>
+      $l(() => {
+        console.log("loaded3");
+      });
+    </script>
     <ul>
       <li><a href="a"></a></li>
       <li><a href="b"></a></li>
@@ -21,6 +39,9 @@
       <li><a href="c"></a></li>
       <li><a href="d"></a></li>
     </ul>
+    <script>
+      console.log("bye");
+    </script>
 
     <form action=""></form>
 
