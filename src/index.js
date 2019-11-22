@@ -56,17 +56,17 @@ $l.extend = function(obj1, ...restObjs) {
   return obj1;
 }
 
-$l.ajax = function(addOptions) {
-  const options = {
-    success:,
-    error: ,
-    url: ,
-    method: ,
-    data: null,
-    contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
-  }
-  $l.extend(options, addOptions);
-}
+// $l.ajax = function(addOptions) {
+//   const options = {
+//     success:,
+//     error: ,
+//     url: ,
+//     method: ,
+//     data: null,
+//     contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+//   }
+//   $l.extend(options, addOptions);
+// }
 
 
 

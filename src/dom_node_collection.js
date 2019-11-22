@@ -6,7 +6,9 @@ class DOMNodeCollection {
 
     if (fn) {
       if (document.readyState === "complete"){
-        fn();
+        setTimeout(function() {
+          fn();
+        },0);
       } else {
         this.on("DOMContentLoaded", fn);
       }
